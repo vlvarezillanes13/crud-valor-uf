@@ -1,0 +1,38 @@
+<h1>Listado de valores UF</h1>
+<mat-divider></mat-divider>
+<a [routerLink]="['../agregar']" class="btn btn-success mt-2 mb-2 mr-2"> Agregar</a>
+<a [routerLink]="['../grafico']" class="btn btn-success mt-2 mb-2"> Ver Gráfico</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Unidad</th>
+      <th>Valor</th>
+      <th>Fecha</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of valores">
+      <td>{{ item.id }}</td>
+      <td>{{ item.codigoIndicador }}</td>
+      <td>{{ item.nombreIndicador }}</td>
+      <td>{{ item.unidadMedidaIndicador }}</td>
+      <td>${{ item.valorIndicador }}</td>
+      <td>{{ item.fechaIndicador | date }}</td>
+      <td>
+        <button
+          class="btn btn-warning mr-2"
+          [routerLink]="['../editar', item.id]"
+        >
+          Editar
+        </button>
+        <button class="btn btn-danger" (click)="mostrarAlerta(item)">
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

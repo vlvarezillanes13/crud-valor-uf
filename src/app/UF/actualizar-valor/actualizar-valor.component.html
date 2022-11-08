@@ -1,0 +1,99 @@
+<h1>Actualizar valor UF</h1>
+<mat-divider></mat-divider>
+
+<form autocomplete="off" [formGroup]="miFormulario" (ngSubmit)="guardar()" class="mt-5">
+
+    <!-- Codigo -->
+    <div class="mb-3 row">
+        <label for="codigo" class="col-sm-3 col-form-label">Código</label>
+        <div class="col-sm-9">
+            <input  placeholder="Código del indicador"
+                    class="form-control"
+                    formControlName="codigo">
+                    
+            <span   class="form-text text-danger"
+                    *ngIf="campoEsValido('codigo')">
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+
+    <!-- Nombre -->
+    <div class="mb-3 row">
+        <label for="nombre" class="col-sm-3 col-form-label">Nombre</label>
+        <div class="col-sm-9">
+            <input  placeholder="Nombre del indicador"
+                    class="form-control"
+                    formControlName="nombre">
+                    
+            <span   class="form-text text-danger"
+                    *ngIf="campoEsValido('nombre')">
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+
+    <!-- Unidad -->
+    <div class="mb-3 row">
+        <label for="unidad" class="col-sm-3 col-form-label">Unidad</label>
+        <div class="col-sm-9">
+            <input  placeholder="Unidad del indicador"
+                    class="form-control"
+                    formControlName="unidad">
+                    
+            <span   class="form-text text-danger"
+                    *ngIf="campoEsValido('unidad')">
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+
+    <!-- Valor -->
+    <div class="mb-3 row">
+        <label for="valor" class="col-sm-3 col-form-label">Valor</label>
+        <div class="col-sm-9">
+            <input  placeholder="Valor del indicador"
+                    class="form-control"
+                    formControlName="valor">
+                    
+            <span   class="form-text text-danger"
+                    *ngIf="campoEsValido('valor')">
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+
+    <!-- Codigo -->
+    <div class="mb-3 row">
+        <label for="fecha" class="col-sm-3 col-form-label">Fecha</label>
+        <div class="col-sm-9">
+
+            <input  placeholder="Fecha del indicador"
+                    class="form-control"
+                    formControlName="fecha"
+                    type="date">
+                    
+            <span   class="form-text text-danger"
+                    *ngIf="campoEsValido('fecha')">
+                Este campo es obligatorio
+            </span>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="col-sm-12">
+            <a type="button"
+                    class="btn btn-secondary float-end"
+                    [routerLink]="[ '../../listado']">
+                Volver
+            </a>
+            <button type="button"
+                    class="btn btn-primary float-end mr-2"
+                    (click)="guardar()">
+                Modificar
+            </button>
+        </div>
+    </div>
+
+</form>
